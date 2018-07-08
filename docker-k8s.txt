@@ -1,0 +1,20 @@
+docker build -t prr19776/raja-kubie .
+docker run -p 8080:8080 -t --name raja-kubie --rm prr19776/raja-kubie:latest
+
+kubectl run raja-kubie --image prr19776/raja-kubie:latest --port 8080 -o yaml --dry-run rk-deployment.yaml
+
+kubectl expose deployment raja-kubie --type=NodePort -o yaml --dry-run
+
+kubectl delete all -l run=raja-kubie
+
+https://www.brosinski.com/post/deploying-spring-boot-app-kubernetes/
+
+https://github.com/trisberg/devoxx-spring-boot-k8s/blob/master/demo-hello.adoc
+
+FROM java:8-alpine
+VOLUME /tmp
+EXPOSE 8080
+COPY raja-kubie.jar raja-kubie.jar
+RUN sh -c 'touch raja-kubie.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","raja-kubie.jar"]
+
