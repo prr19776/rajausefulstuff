@@ -1,3 +1,5 @@
+## Basic Command for docker and k8s
+
 docker build -t prr19776/raja-kubie .
 docker run -p 8080:8080 -t --name raja-kubie --rm prr19776/raja-kubie:latest
 
@@ -7,10 +9,12 @@ kubectl expose deployment raja-kubie --type=NodePort -o yaml --dry-run
 
 kubectl delete all -l run=raja-kubie
 
-https://www.brosinski.com/post/deploying-spring-boot-app-kubernetes/
 
+##Useful Links
+https://www.brosinski.com/post/deploying-spring-boot-app-kubernetes/
 https://github.com/trisberg/devoxx-spring-boot-k8s/blob/master/demo-hello.adoc
 
+#Sample Docker file
 FROM java:8-alpine
 VOLUME /tmp
 EXPOSE 8080
