@@ -18,3 +18,4 @@ COPY raja-kubie.jar raja-kubie.jar
 RUN sh -c 'touch raja-kubie.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","raja-kubie.jar"]
 
+
