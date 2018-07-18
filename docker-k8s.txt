@@ -22,4 +22,7 @@ COPY raja-kubie.jar raja-kubie.jar
 RUN sh -c 'touch raja-kubie.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","raja-kubie.jar"]
 
+https://github.com/bpassos/git-commands
+https://ibeblog.com/2014/03/14/winmerge-as-mergetool-with-github-for-windows/
+
 
