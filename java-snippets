@@ -1,0 +1,22 @@
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.junit.Test;
+
+public class NowJava81 {
+	@Test
+	public void myTest() {
+		VehicleInfo vi = new VehicleInfo();
+		List<Object> lines = Arrays.asList(1,2,3,"spring","ok"); 
+		List<Object> fResult = lines.stream().filter(line -> line instanceof String).collect(Collectors.toList());
+		int result = lines.stream().filter(line -> line instanceof String).collect(Collectors.toList()).size();
+		//System.out.println(assertThat(result).isGreaterThanOrEqualTo(2));
+		System.out.println(assertThat(lines).hasAtLeastOneElementOfType(VehicleInfo.class));
+		System.out.println(result);
+		//result.forEach(System.out::println);
+			
+	}
+}
