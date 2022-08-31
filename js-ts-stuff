@@ -2,7 +2,7 @@ node -r ts-node/register --inspect-brk=9999 src/server.ts
 
 Ctrl+Shift+P to attach to debugger
 
-##Launch Config
+##Launch Config 1
         {
             "type": "node",
             "request": "attach",
