@@ -1,0 +1,11 @@
+"Application Context":
+  filenames:
+    - a.yml
+"Gitlab Bundle":
+  name: 
+  filenames:
+    - a.yml
+    - g.yml
+"VM Windows - DCONF":
+  filenames:
+    - v.yml
